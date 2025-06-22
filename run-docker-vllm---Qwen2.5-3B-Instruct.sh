@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HF_TOKEN=$(cat ~/.huggingface/token)
+#HF_TOKEN=$(cat ~/.huggingface/token)
 
 docker run -d \
     --name vLLM-Qwen2.5-3B-Instruct \
@@ -18,7 +18,7 @@ docker run -d \
     --port 5000 \
     --gpu-memory-utilization 1.0 \
     --served-model-name "vLLM-Qwen2.5-3B-Instruct" \
-    --max-num-batched-tokens 4096 \
-    --max-num-seqs 128 \
-    --max-model-len 4096 \
+    --max-num-batched-tokens 8192 \
+    --max-num-seqs 256 \
+    --max-model-len 8192 \
     --generation-config config/Qwen2.5-3B-Instruct
