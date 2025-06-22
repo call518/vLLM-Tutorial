@@ -7,6 +7,9 @@
 # Example) Get Model
 
 ```bash
+$ pip install huggingface_hub
+$ huggingface-cli login --token {TOKEN}
+$ huggingface-cli whoami
 $ huggingface-cli download lmstudio-community/Qwen2.5-3B-Instruct-GGUF Qwen2.5-3B-Instruct-Q4_K_M.gguf --local-dir ./models/Qwen2.5-3B-Instruct/ 
 $ huggingface-cli download Qwen/Qwen2.5-3B-Instruct generation_config.json --local-dir ./config
 ```
