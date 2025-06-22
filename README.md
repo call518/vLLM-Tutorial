@@ -23,5 +23,35 @@ $ huggingface-cli download Qwen/Qwen2.5-3B-Instruct generation_config.json --loc
 $ ./run-docker-vllm---Qwen2.5-3B-Instruct.sh
 
 (Check API)
-$ curl -X GET http://127.0.0.1:5000/v1/models
+$ curl -s -X GET http://localhost:5000/v1/models | jq
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "vLLM-Qwen2.5-3B-Instruct",
+      "object": "model",
+      "created": 1750609168,
+      "owned_by": "vllm",
+      "root": "models/Qwen2.5-3B-Instruct/Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+      "parent": null,
+      "max_model_len": 4096,
+      "permission": [
+        {
+          "id": "modelperm-89300f90242a4014b1c096dc7cf69724",
+          "object": "model_permission",
+          "created": 1750609168,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    }
+  ]
+}
 ```
