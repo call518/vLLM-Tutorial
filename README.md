@@ -1,0 +1,12 @@
+# Tutorial Documents
+
+- (Part-1) https://henrynavarro.org/ollama-vs-vllm-which-framework-is-better-for-inference-part-i-d8211d7248d2
+- (Part-2) https://henrynavarro.org/ollama-vs-vllm-which-framework-is-better-for-inference-part-ii-37f7e24d3899
+- (Part-3) https://henrynavarro.org/ollama-vs-vllm-which-framework-is-better-for-inference-part-iii-004f62d44e4f
+
+# Example) Get Model
+
+```bash
+$ huggingface-cli download lmstudio-community/Qwen2.5-14B-Instruct-GGUF Qwen2.5-14B-Instruct-Q4_K_M.gguf --local-dir ./models/Qwen2.5-14B-Instruct/ 
+$ huggingface-cli download Qwen/Qwen2.5-14B-Instruct generation_config.json --local-dir ./config
+```
