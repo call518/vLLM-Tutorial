@@ -10,6 +10,18 @@
 $ pip install huggingface_hub
 $ huggingface-cli login --token {TOKEN}
 $ huggingface-cli whoami
+
+(e.g. Qwen2.5-3B-Instruct-GGUF)
 $ huggingface-cli download lmstudio-community/Qwen2.5-3B-Instruct-GGUF Qwen2.5-3B-Instruct-Q4_K_M.gguf --local-dir ./models/Qwen2.5-3B-Instruct/ 
-$ huggingface-cli download Qwen/Qwen2.5-3B-Instruct generation_config.json --local-dir ./config
+$ huggingface-cli download Qwen/Qwen2.5-3B-Instruct generation_config.json --local-dir ./config/Qwen2.5-3B-Instruct
+```
+
+# Run vLLM (/w Docker)
+
+```bash
+(e.g.)
+$ ./run-docker-vllm---Qwen2.5-3B-Instruct.sh
+
+(Check API)
+$ curl -X GET http://127.0.0.1:5000/v1/models
 ```

@@ -7,7 +7,7 @@ client = OpenAI(
 
 # Chat completion
 response = client.chat.completions.create(
-    model="VLLMQwen2.5-3B",
+    model="vLLM-Qwen2.5-3B-Instruct",
     messages=[
             {
                 "role": "system",

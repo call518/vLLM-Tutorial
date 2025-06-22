@@ -3,7 +3,7 @@ import requests
 # Basic chat completion request. Note the endpoint is different to ollama 
 response = requests.post('http://127.0.0.1:5000/v1/chat/completions', 
     json={
-        'model': 'VLLMQwen2.5-3B',
+        'model': 'vLLM-Qwen2.5-3B-Instruct',
         'messages': [
             {
                 'role': 'system',
