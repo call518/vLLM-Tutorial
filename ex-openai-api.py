@@ -15,7 +15,7 @@ response = client.chat.completions.create(
             },
             {
                 "role": "user",
-                "content": "구구단 출력 파이썬 코드 작성해 주세요."
+                "content": "1000단어 분량의 이야기를 들려주세요."
             }
         ]
 )
