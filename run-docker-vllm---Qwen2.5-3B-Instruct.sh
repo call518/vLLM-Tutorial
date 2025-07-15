@@ -25,7 +25,8 @@ docker_args=(
     --name vLLM-Qwen2.5-3B-Instruct \
     --runtime nvidia \
     --gpus all \
-    --network="host" \
+    #--network="host" \
+    -p 5000:5000
     --ipc=host \
     -v ./models:/vllm-workspace/models \
     -v ./config:/vllm-workspace/config \
