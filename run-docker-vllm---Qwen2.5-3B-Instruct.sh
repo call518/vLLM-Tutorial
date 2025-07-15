@@ -26,12 +26,12 @@ docker_args=(
     --runtime nvidia \
     --gpus all \
     #--network="host" \
-    -p 5000:5000
+    -p 5000:5000 \
     --ipc=host \
     -v ./models:/vllm-workspace/models \
     -v ./config:/vllm-workspace/config \
     -e HUGGING_FACE_HUB_TOKEN=$HF_TOKEN \
-    vllm/vllm-openai:latest \
+    vllm/vllm-openai:v0.9.2 \
     # --load-format gguf \
     --model models/Qwen2.5-3B-Instruct/Qwen2.5-3B-Instruct-Q4_K_M.gguf \
     --tokenizer Qwen/Qwen2.5-3B-Instruct \
