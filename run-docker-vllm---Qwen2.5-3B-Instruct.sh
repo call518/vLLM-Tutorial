@@ -41,7 +41,7 @@ docker_args=(
     #--cpu-offload-gb 16 \
     --served-model-name "Qwen/Qwen2.5-3B-Instruct" \
     --max-num-batched-tokens 8192 \
-    --max-num-seqs 2 \
+    --max-num-seqs 4 \
     --max-model-len 8192 \
     --generation-config config
 )
