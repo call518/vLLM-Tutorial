@@ -22,7 +22,7 @@
 HF_TOKEN=$(cat ~/.huggingface/token)
 
 docker_args=(
-    --name vLLM-Qwen2.5-3B-Instruct \
+    --name vLLM-Tutorial \
     --runtime nvidia \
     --gpus all \
     #--network="host" \
@@ -37,13 +37,13 @@ docker_args=(
     --tokenizer Qwen/Qwen2.5-3B-Instruct \
     --host "0.0.0.0" \
     --port 5000 \
-    --gpu-memory-utilization 1.0 \
+    --gpu-memory-utilization 0.9 \
     #--cpu-offload-gb 16 \
-    --served-model-name "vLLM-Qwen2.5-3B-Instruct" \
+    --served-model-name "Qwen/Qwen2.5-3B-Instruct" \
     --max-num-batched-tokens 8192 \
-    --max-num-seqs 256 \
+    --max-num-seqs 2 \
     --max-model-len 8192 \
     --generation-config config
 )
 
-docker run -d "${docker_args[@]}"
+docker run --rm -d "${docker_args[@]}"
