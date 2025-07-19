@@ -34,16 +34,25 @@ docker_args=(
     vllm/vllm-openai:v0.9.2 \
     # --load-format gguf \
     --model models/Qwen2.5-3B-Instruct/Qwen2.5-3B-Instruct-Q4_K_M.gguf \
+    --generation-config config \
     --tokenizer Qwen/Qwen2.5-3B-Instruct \
-    --host "0.0.0.0" \
-    --port 5000 \
     --gpu-memory-utilization 0.9 \
     #--cpu-offload-gb 16 \
     --served-model-name "Qwen/Qwen2.5-3B-Instruct" \
     --max-num-batched-tokens 8192 \
+    #--max-num-batched-tokens 4096 \
     --max-num-seqs 4 \
     --max-model-len 8192 \
-    --generation-config config
+    #--max-model-len 4096 \
+    #--tensor_parallel_size 4 \
+    #--pipeline_parallel_size 2 \
+    #--enforce-eager \
+    #--enable-prefix-caching \
+    #--enable-chunked-prefill \
+    #--num-scheduler-steps 10 \
+    #--speculative-config '{"method": "ngram"}' \
+    --host "0.0.0.0" \
+    --port 5000
 )
 
-docker run --rm -d "${docker_args[@]}"
+docker run -d "${docker_args[@]}"
