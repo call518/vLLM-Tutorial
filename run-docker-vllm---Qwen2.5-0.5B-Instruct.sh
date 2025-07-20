@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# huggingface-cli download lmstudio-community/Qwen2.5-1.5B-Instruct-GGUF Qwen2.5-1.5B-Instruct-Q4_K_M.gguf --local-dir ./models/Qwen2.5-1.5B-Instruct/
-# huggingface-cli download Qwen/Qwen2.5-1.5B-Instruct generation_config.json --local-dir ./config/Qwen2.5-1.5B-Instruct
-# sed -i 's|"temperature":.*|"temperature": 0.0,|g' ./config/Qwen2.5-1.5B-Instruct/generation_config.json
+# huggingface-cli download lmstudio-community/Qwen2.5-0.5B-Instruct-GGUF Qwen2.5-0.5B-Instruct-Q4_K_M.gguf --local-dir ./models/Qwen2.5-0.5B-Instruct/
+# huggingface-cli download Qwen/Qwen2.5-0.5B-Instruct generation_config.json --local-dir ./config/Qwen2.5-0.5B-Instruct
+# sed -i 's|"temperature":.*|"temperature": 0.0,|g' ./config/Qwen2.5-0.5B-Instruct/generation_config.json
 
 HF_TOKEN=$(cat ~/.huggingface/token)
 
@@ -18,12 +18,12 @@ docker_args=(
     -e HUGGING_FACE_HUB_TOKEN=$HF_TOKEN \
     vllm/vllm-openai:v0.9.2 \
     # --load-format gguf \
-    --model models/Qwen2.5-1.5B-Instruct/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf \
-    --generation-config config/Qwen2.5-1.5B-Instruct \
-    --tokenizer Qwen/Qwen2.5-1.5B-Instruct \
+    --model models/Qwen2.5-0.5B-Instruct/Qwen2.5-0.5B-Instruct-Q4_K_M.gguf \
+    --generation-config config/Qwen2.5-0.5B-Instruct \
+    --tokenizer Qwen/Qwen2.5-0.5B-Instruct \
     --gpu-memory-utilization 0.5 \
     #--cpu-offload-gb 16 \
-    --served-model-name "Qwen/Qwen2.5-1.5B-Instruct" \
+    --served-model-name "Qwen/Qwen2.5-0.5B-Instruct" \
     --max-num-batched-tokens 8192 \
     #--max-num-batched-tokens 4096 \
     --max-num-seqs 4 \
