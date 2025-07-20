@@ -14,7 +14,11 @@ $ huggingface-cli whoami
 
 (e.g. Qwen2.5-3B-Instruct-GGUF)
 $ huggingface-cli download lmstudio-community/Qwen2.5-3B-Instruct-GGUF Qwen2.5-3B-Instruct-Q4_K_M.gguf --local-dir ./models/Qwen2.5-3B-Instruct/
-$ huggingface-cli download Qwen/Qwen2.5-3B-Instruct generation_config.json --local-dir ./config
+$ huggingface-cli download Qwen/Qwen2.5-3B-Instruct generation_config.json --local-dir ./config/Qwen2.5-3B-Instruct
+
+(optional)
+$ huggingface-cli download lmstudio-community/Qwen2.5-1.5B-Instruct-GGUF Qwen2.5-1.5B-Instruct-Q4_K_M.gguf --local-dir ./models/Qwen2.5-1.5B-Instruct/
+$ huggingface-cli download Qwen/Qwen2.5-1.5B-Instruct generation_config.json --local-dir ./config/Qwen2.5-1.5B-Instruct
 
 $ vi ./config/generation_config.json
 {
