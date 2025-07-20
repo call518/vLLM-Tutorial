@@ -19,7 +19,7 @@ docker_args=(
     --tokenizer Qwen/Qwen2.5-3B-Instruct \
     --gpu-memory-utilization 0.5 \
     #--cpu-offload-gb 16 \
-    --served-model-name "Qwen/Qwen2.5-3B-Instruct" \
+    --served-model-name "Qwen/Qwen2.5-1.5B-Instruct" \
     --max-num-batched-tokens 8192 \
     #--max-num-batched-tokens 4096 \
     --max-num-seqs 4 \
