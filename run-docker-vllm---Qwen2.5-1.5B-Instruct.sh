@@ -24,10 +24,12 @@ docker_args=(
     --gpu-memory-utilization 0.5 \
     #--cpu-offload-gb 16 \
     --served-model-name "Qwen/Qwen2.5-1.5B-Instruct" \
-    --max-num-batched-tokens 8192 \
+    --max-num-batched-tokens 16384 \
+    #--max-num-batched-tokens 8192 \
     #--max-num-batched-tokens 4096 \
     --max-num-seqs 4 \
-    --max-model-len 8192 \
+    --max-model-len 16384 \
+    #--max-model-len 8192 \
     #--max-model-len 4096 \
     #--tensor_parallel_size 4 \
     #--pipeline_parallel_size 2 \
