@@ -3,6 +3,7 @@
 # huggingface-cli download lmstudio-community/Qwen2.5-1.5B-Instruct-GGUF Qwen2.5-1.5B-Instruct-Q4_K_M.gguf --local-dir ./models/Qwen2.5-1.5B-Instruct/
 # huggingface-cli download Qwen/Qwen2.5-1.5B-Instruct generation_config.json --local-dir ./config/Qwen2.5-1.5B-Instruct
 # sed -i 's|"temperature":.*|"temperature": 0.0,|g' ./config/Qwen2.5-1.5B-Instruct/generation_config.json
+# sed -i 's|"top_k":.*|"top_k": 0.5,|g' ./config/Qwen2.5-1.5B-Instruct/generation_config.json
 
 HF_TOKEN=$(cat ~/.huggingface/token)
 
