@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# huggingface-cli download lmstudio-community/Qwen2.5-0.5B-Instruct-GGUF Qwen2.5-0.5B-Instruct-Q4_K_M.gguf --local-dir ./models/Qwen2.5-0.5B-Instruct/
-# huggingface-cli download Qwen/Qwen2.5-0.5B-Instruct generation_config.json --local-dir ./config/Qwen2.5-0.5B-Instruct
-# sed -i 's|"temperature":.*|"temperature": 0.0,|g' ./config/Qwen2.5-0.5B-Instruct/generation_config.json
-# sed -i 's|"top_k":.*|"top_k": 0.5,|g' ./config/Qwen2.5-0.5B-Instruct/generation_config.json
+# huggingface-cli download mradermacher/llama-3.2-3b-sys-log-analysis-v1-GGUF llama-3.2-3b-sys-log-analysis-v1.Q4_K_M.gguf --local-dir ./models/llama-3.2-3b-sys-log-analysis
+# huggingface-cli download meta-llama/Llama-3.2-3B generation_config.json --local-dir ./config/llama-3.2-3b-sys-log-analysis
+# sed -i 's|"temperature":.*|"temperature": 0.1,|g' ./config/llama-3.2-3b-sys-log-analysis/generation_config.json
+# sed -i 's|"top_k":.*|"top_k": 0.5,|g' ./config/llama-3.2-3b-sys-log-analysis/generation_config.json
 
 HF_TOKEN=$(cat ~/.huggingface/token)
 
@@ -19,12 +19,11 @@ docker_args=(
     -e HUGGING_FACE_HUB_TOKEN=$HF_TOKEN \
     vllm/vllm-openai:v0.9.2 \
     # --load-format gguf \
-    --model models/Qwen2.5-0.5B-Instruct/Qwen2.5-0.5B-Instruct-Q4_K_M.gguf \
-    --generation-config config/Qwen2.5-0.5B-Instruct \
-    --tokenizer Qwen/Qwen2.5-0.5B-Instruct \
+    --model models/llama-3.2-3b-sys-log-analysis/llama-3.2-3b-sys-log-analysis-v1.Q4_K_M.gguf \
+    --generation-config config/llama-3.2-3b-sys-log-analysis \
     --gpu-memory-utilization 0.9 \
     #--cpu-offload-gb 16 \
-    --served-model-name "Qwen/Qwen2.5-0.5B-Instruct" \
+    --served-model-name "mradermacher/llama-3.2-3b-sys-log-analysis" \
     --max-num-batched-tokens 16384 \
     #--max-num-batched-tokens 8192 \
     #--max-num-batched-tokens 4096 \
