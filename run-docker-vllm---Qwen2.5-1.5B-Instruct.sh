@@ -22,7 +22,7 @@ docker_args=(
     --model models/Qwen2.5-1.5B-Instruct/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf \
     --generation-config config/Qwen2.5-1.5B-Instruct \
     --tokenizer Qwen/Qwen2.5-1.5B-Instruct \
-    --gpu-memory-utilization 0.6 \
+    --gpu-memory-utilization 0.8 \
     #--cpu-offload-gb 16 \
     --served-model-name "Qwen/Qwen2.5-1.5B-Instruct" \
     --max-num-batched-tokens 16384 \
