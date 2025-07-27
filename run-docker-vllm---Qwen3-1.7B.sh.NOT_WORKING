@@ -22,7 +22,7 @@ docker_args=(
     --model models/Qwen3-1.7B/Qwen3-1.7B-Q4_K_M.gguf \
     --generation-config config/Qwen3-1.7B \
     --tokenizer Qwen/Qwen3-1.7B \
-    --gpu-memory-utilization 0.9 \
+    --gpu-memory-utilization 0.6 \
     #--cpu-offload-gb 16 \
     --served-model-name "Qwen/Qwen3-1.7B" \
     --max-num-batched-tokens 16384 \

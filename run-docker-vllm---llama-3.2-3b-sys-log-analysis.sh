@@ -21,7 +21,7 @@ docker_args=(
     # --load-format gguf \
     --model models/llama-3.2-3b-sys-log-analysis/llama-3.2-3b-sys-log-analysis-v1.Q4_K_M.gguf \
     --generation-config config/llama-3.2-3b-sys-log-analysis \
-    --gpu-memory-utilization 0.9 \
+    --gpu-memory-utilization 0.6 \
     #--cpu-offload-gb 16 \
     --served-model-name "mradermacher/llama-3.2-3b-sys-log-analysis" \
     --max-num-batched-tokens 16384 \
