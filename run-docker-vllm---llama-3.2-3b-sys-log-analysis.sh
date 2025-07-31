@@ -5,7 +5,7 @@
 # sed -i 's|"temperature":.*|"temperature": 0.1,|g' ./config/llama-3.2-3b-sys-log-analysis/generation_config.json
 # sed -i 's|"top_k":.*|"top_k": 0.5,|g' ./config/llama-3.2-3b-sys-log-analysis/generation_config.json
 
-HF_TOKEN=$(cat ~/.huggingface/token)
+#HF_TOKEN=$(cat ~/.huggingface/token)
 
 docker_args=(
     --name vLLM-Tutorial \
@@ -16,7 +16,7 @@ docker_args=(
     --ipc=host \
     -v ./models:/vllm-workspace/models \
     -v ./config:/vllm-workspace/config \
-    -e HUGGING_FACE_HUB_TOKEN=$HF_TOKEN \
+    #-e HUGGING_FACE_HUB_TOKEN=$HF_TOKEN \
     vllm/vllm-openai:v0.9.2 \
     # --load-format gguf \
     --model models/llama-3.2-3b-sys-log-analysis/llama-3.2-3b-sys-log-analysis-v1.Q4_K_M.gguf \

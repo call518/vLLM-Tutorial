@@ -5,7 +5,7 @@
 # sed -i 's|"temperature":.*|"temperature": 0.0,|g' ./config/Qwen2.5-0.5B-Instruct/generation_config.json
 # sed -i 's|"top_k":.*|"top_k": 0.5,|g' ./config/Qwen2.5-0.5B-Instruct/generation_config.json
 
-HF_TOKEN=$(cat ~/.huggingface/token)
+#HF_TOKEN=$(cat ~/.huggingface/token)
 
 docker_args=(
     --name vLLM-Tutorial \
@@ -16,7 +16,7 @@ docker_args=(
     --ipc=host \
     -v ./models:/vllm-workspace/models \
     -v ./config:/vllm-workspace/config \
-    -e HUGGING_FACE_HUB_TOKEN=$HF_TOKEN \
+    #-e HUGGING_FACE_HUB_TOKEN=$HF_TOKEN \
     vllm/vllm-openai:v0.9.2 \
     # --load-format gguf \
     --model models/Qwen2.5-0.5B-Instruct/Qwen2.5-0.5B-Instruct-Q4_K_M.gguf \
