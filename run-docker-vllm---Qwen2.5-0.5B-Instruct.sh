@@ -21,7 +21,7 @@ docker_args=(
     # --load-format gguf \
     --model models/Qwen2.5-0.5B-Instruct/Qwen2.5-0.5B-Instruct-Q4_K_M.gguf \
     --generation-config config/Qwen2.5-0.5B-Instruct \
-    --tokenizer Qwen/Qwen2.5-0.5B-Instruct \
+    #--tokenizer Qwen/Qwen2.5-0.5B-Instruct \
     --gpu-memory-utilization 0.8 \
     #--cpu-offload-gb 16 \
     --served-model-name "Qwen/Qwen2.5-0.5B-Instruct" \

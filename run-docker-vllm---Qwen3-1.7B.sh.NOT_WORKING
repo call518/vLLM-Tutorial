@@ -21,7 +21,7 @@ docker_args=(
     # --load-format gguf \
     --model models/Qwen3-1.7B/Qwen3-1.7B-Q4_K_M.gguf \
     --generation-config config/Qwen3-1.7B \
-    --tokenizer Qwen/Qwen3-1.7B \
+    #--tokenizer Qwen/Qwen3-1.7B \
     --gpu-memory-utilization 0.8 \
     #--cpu-offload-gb 16 \
     --served-model-name "Qwen/Qwen3-1.7B" \
