@@ -16,28 +16,30 @@ docker_args=(
     --ipc=host \
     -v ./models:/vllm-workspace/models \
     -v ./config:/vllm-workspace/config \
+    -e VLLM_LOGGING_LEVEL=DEBUG \
     -e HUGGING_FACE_HUB_TOKEN=$HF_TOKEN \
     vllm/vllm-openai:v0.10.0 \
     # --load-format gguf \
     --model Qwen/Qwen3-1.7B \
     --served-model-name "Qwen/Qwen3-1.7B" \
     --gpu-memory-utilization 0.9 \
-    #--cpu-offload-gb 16 \
-    --max-num-batched-tokens 8192 \
+    # --cpu-offload-gb 16 \
+    --max-num-batched-tokens 16384 \
+    # --max-num-batched-tokens 8192 \
     # --max-num-batched-tokens 4096 \
     # --max-num-batched-tokens 2048 \
     --max-num-seqs 4 \
-    --max-model-len 8192 \
-    # --max-model-len 4096 \
+    --max-model-len 4096 \
     # --max-model-len 2048 \
     # --max-model-len 1024 \
-    #--tensor_parallel_size 4 \
-    #--pipeline_parallel_size 2 \
-    #--enforce-eager \
-    #--enable-prefix-caching \
-    #--enable-chunked-prefill \
-    #--num-scheduler-steps 10 \
-    #--speculative-config '{"method": "ngram"}' \
+    # --tensor_parallel_size 4 \
+    # --pipeline_parallel_size 2 \
+    # --enforce-eager \
+    # --enable-prefix-caching \
+    # --enable-chunked-prefill \
+    # --num-scheduler-steps 10 \
+    # --speculative-config '{"method": "ngram"}' \
+    --uvicorn-log-level debug \
     --host "0.0.0.0" \
     --port 5000
 )
