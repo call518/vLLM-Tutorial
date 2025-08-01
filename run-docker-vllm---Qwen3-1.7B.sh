@@ -18,7 +18,7 @@ docker_args=(
     --ipc=host \
     -v ./models:/vllm-workspace/models \
     -v ./config:/vllm-workspace/config \
-    -e VLLM_LOGGING_LEVEL=DEBUG \
+    # -e VLLM_LOGGING_LEVEL=DEBUG \
     -e HUGGING_FACE_HUB_TOKEN=$HF_TOKEN \
     vllm/vllm-openai:v0.10.0 \
     # --load-format gguf \
