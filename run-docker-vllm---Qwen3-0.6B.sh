@@ -7,7 +7,7 @@
 
 HF_TOKEN=$(cat ~/.huggingface/token)
 
-MODEL_NAME="Qwen/Qwen3-1.7B"
+MODEL_NAME="Qwen/Qwen3-0.6B"
 
 docker_args=(
     --name vLLM-Tutorial \
@@ -20,7 +20,7 @@ docker_args=(
     -v ./config:/vllm-workspace/config \
     # -e VLLM_LOGGING_LEVEL=DEBUG \
     -e HUGGING_FACE_HUB_TOKEN=$HF_TOKEN \
-    vllm/vllm-openai:v0.9.2 \
+    vllm/vllm-openai:v0.10.0 \
     # --load-format gguf \
     --model ${MODEL_NAME} \
     --served-model-name ${MODEL_NAME} \

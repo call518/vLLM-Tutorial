@@ -18,6 +18,7 @@ docker_args=(
     -v ./config:/vllm-workspace/config \
     #-e HUGGING_FACE_HUB_TOKEN=$HF_TOKEN \
     vllm/vllm-openai:v0.9.2 \
+    # vllm/vllm-openai:v0.10.0 \
     # --load-format gguf \
     --model models/Qwen2.5-1.5B-Instruct/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf \
     --generation-config config/Qwen2.5-1.5B-Instruct \
