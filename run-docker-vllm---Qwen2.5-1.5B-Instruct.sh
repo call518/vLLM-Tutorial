@@ -30,8 +30,8 @@ docker_args=(
     #--max-num-batched-tokens 8192 \
     #--max-num-batched-tokens 4096 \
     --max-num-seqs 4 \
-    --max-model-len 16384 \
-    #--max-model-len 8192 \
+    # --max-model-len 16384 \
+    --max-model-len 8192 \
     #--max-model-len 4096 \
     #--tensor_parallel_size 4 \
     #--pipeline_parallel_size 2 \
