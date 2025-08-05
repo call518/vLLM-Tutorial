@@ -26,13 +26,13 @@ docker_args=(
     --served-model-name ${MODEL_NAME} \
     --gpu-memory-utilization 0.9 \
     # --cpu-offload-gb 16 \
-    --max-num-batched-tokens 16384 \
-    # --max-num-batched-tokens 8192 \
-    # --max-num-batched-tokens 4096 \
-    # --max-num-batched-tokens 2048 \
-    --max-num-seqs 4 \
-    # --max-model-len 8192 \
-    --max-model-len 4096 \
+    --max-num-batched-tokens 32768 \
+    #--max-num-batched-tokens 16384 \
+    #--max-num-batched-tokens 8192 \
+    #--max-num-batched-tokens 4096 \
+    --max-num-seqs 3 \
+    --max-model-len 16384 \
+    #--max-model-len 8192 \
     # --max-model-len 2048 \
     # --max-model-len 1024 \
     # --tensor_parallel_size 4 \
