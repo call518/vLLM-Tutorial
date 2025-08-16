@@ -11,6 +11,7 @@ MODEL_NAME="Qwen/Qwen3-1.7B"
 
 docker_args=(
     --name vLLM-Tutorial \
+    --restart unless-stopped \
     --runtime nvidia \
     --gpus all \
     #--network="host" \

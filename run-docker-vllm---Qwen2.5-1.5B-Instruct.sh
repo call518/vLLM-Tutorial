@@ -9,6 +9,7 @@
 
 docker_args=(
     --name vLLM-Tutorial \
+    --restart unless-stopped \
     --runtime nvidia \
     --gpus all \
     #--network="host" \
